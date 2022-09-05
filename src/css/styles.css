@@ -2,8 +2,6 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(225deg, #000000 0 50%, #b81d1d 50% 100%);
-  /* background: linear-gradient(45deg, red 0 50%, blue 50% 100%); */
   background: linear-gradient(45deg, #000000 10%, 70%, #b81d1d 90%);
 }
 h1 {
