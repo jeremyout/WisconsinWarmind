@@ -9,6 +9,12 @@
     <script type="module" src="src/js/index.js"></script>
     <title>Wisconsin Warmind</title>
     <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main-header">
@@ -21,6 +27,15 @@
         <h1>Wisconsin Warmind</h1>
       </div>
     </div>
-    <div class="hero"></div>
+    <div class="hero">
+      <form class="profile-search-form">
+        <label class="profile-search-label" for="profile-search"
+          >Please enter your Bungie Name:</label
+        >
+        <br />
+        <input class="profile-search-input" name="profile-search" type="text" />
+        <button class="profile-search-button" type="submit">Search</button>
+      </form>
+    </div>
   </body>
 </html>

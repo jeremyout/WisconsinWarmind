@@ -5,6 +5,7 @@ body {
   height: 100vh;
   /* background: linear-gradient(20deg, #000000 10%, 70%, #b81d1d 90%); */
   background-color: #191919;
+  font-family: 'Montserrat', sans-serif;
 }
 h1 {
   font-size: 1.25rem;
@@ -14,15 +15,13 @@ h1 {
 }
 
 .hero {
-  display: flex;
   margin: auto;
-  justify-content: center;
   height: 60vh;
-  background-image: url("/src/img/Rasputin.jpg");
+  background-image: url('/src/img/Rasputin.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(5px);
+  /* filter: blur(5px); */
   max-width: 1920px;
 }
 
@@ -41,4 +40,33 @@ h1 {
 }
 .logo_img {
   width: 5%;
+}
+
+.profile-search-label {
+  color: azure;
+  font-size: 1.5rem;
+  position: relative;
+
+  top: 25px;
+}
+
+.profile-search-input {
+  height: 1.5rem;
+  width: 15rem;
+  margin: 0.5rem;
+  background-color: #333333;
+  color: azure;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  position: relative;
+  top: 30px;
+}
+
+.profile-search-button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: azure;
+  border-radius: 8px;
+  position: relative;
+  top: 25px;
+  padding: 0.5rem;
 }
