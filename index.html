@@ -6,11 +6,41 @@
     <meta http-equiv="Content-Language" content="en" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="src/js/index.js"></script>
+    <script type="module" src="src/js/controller.js"></script>
     <title>Wisconsin Warmind</title>
     <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Wisconsin Warmind</h1>
+    <div class="main-header">
+      <div class="header_logo">
+        <img
+          class="logo_img"
+          src="src/img/WisconsinWarmind-round.png"
+          alt="WisconsinWarmind_logo"
+        />
+        <h1>Wisconsin Warmind</h1>
+      </div>
+    </div>
+    <div class="hero">
+      <form class="profile-search-form">
+        <label class="profile-search-label" for="profile-search"
+          >Search for a Bungie profile:</label
+        >
+        <br />
+        <input
+          class="profile-search-input"
+          name="profile-search"
+          type="text"
+          placeholder="Enter Bungie Profile name"
+        />
+        <button class="profile-search-button" type="submit">Search</button>
+      </form>
+    </div>
   </body>
 </html>
