@@ -16,7 +16,7 @@ h1 {
 
 .hero {
   margin: auto;
-  height: 60vh;
+  height: 37rem;
   background-image: url('/src/img/Rasputin.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,20 +46,21 @@ h1 {
   color: azure;
   font-size: 1.5rem;
   position: relative;
-
-  top: 25px;
+  top: 1.25rem;
+  left: 1.25rem;
 }
 
 .profile-search-input {
   height: 1.5rem;
-  width: 15rem;
+  width: 22rem;
   margin: 0.5rem;
   background-color: #333333;
   color: azure;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   position: relative;
-  top: 30px;
+  top: 1.75rem;
+  left: 2rem;
 }
 
 .profile-search-button {
@@ -67,6 +68,7 @@ h1 {
   background-color: azure;
   border-radius: 8px;
   position: relative;
-  top: 25px;
+  top: 1.5rem;
+  left: 2rem;
   padding: 0.5rem;
 }
