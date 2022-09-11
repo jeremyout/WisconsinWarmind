@@ -1,0 +1,23 @@
+{
+  "name": "wisconsinwarmind",
+  "version": "0.0.1",
+  "description": "This is a personal project that utilizes the Bungie.net API to obtain information about your Destiny 2 profiles.",
+  "main": "controller.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremyoutinen/WisconsinWarmind.git"
+  },
+  "author": "Jeremy Outinen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremyoutinen/WisconsinWarmind/issues"
+  },
+  "homepage": "https://github.com/jeremyoutinen/WisconsinWarmind#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
