@@ -77,6 +77,10 @@ h1 {
   color: azure;
 }
 
+.results {
+  padding: 0;
+}
+
 .search-result {
   display: flex;
   justify-content: space-between;
