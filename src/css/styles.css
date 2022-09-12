@@ -67,3 +67,35 @@ h1 {
   position: relative;
   bottom: 0.25rem;
 }
+
+.search-results-container {
+  padding: 1.5rem;
+}
+
+.results-label {
+  margin: 0;
+  color: azure;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px;
+  border-color: azure;
+  background-color: #191919;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 10px;
+  padding-left: 1rem;
+  width: 27rem;
+}
+
+.search-result-platform-img {
+  height: 2rem;
+  padding: 0.5rem;
+  margin: auto 0;
+}
+
+.profile-name {
+  color: azure;
+}
