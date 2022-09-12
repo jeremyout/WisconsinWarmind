@@ -1,5 +1,6 @@
 import * as model from './model.js';
 import profileSearchView from './views/profileSearchView';
+import resultsView from './views/resultsView.js';
 
 const controlSearchResults = async function () {
   try {
@@ -11,7 +12,7 @@ const controlSearchResults = async function () {
     await model.searchPlayer(query);
 
     // 3) Render results
-    // TODO
+    resultsView.render(model.state.search.results);
   } catch (err) {
     console.log(err);
   }
