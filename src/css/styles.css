@@ -1,12 +1,10 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  /* background: linear-gradient(20deg, #000000 10%, 70%, #b81d1d 90%); */
   background-color: #191919;
   font-family: 'Montserrat', sans-serif;
 }
+
 h1 {
   font-size: 1.25rem;
   line-height: 1.3;
@@ -14,61 +12,109 @@ h1 {
   color: white;
 }
 
-.hero {
-  margin: auto;
-  height: 37rem;
-  background-image: url('/src/img/Rasputin.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* filter: blur(5px); */
-  max-width: 1920px;
-}
-
 .main-header {
-  display: flex;
-  width: 100%;
-  margin: auto;
+  margin: 0 auto;
   align-items: center;
   max-width: 1920px;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .header_logo {
   display: flex;
   align-items: center;
 }
+
 .logo_img {
   width: 5%;
+}
+
+.hero-container {
+  height: 37rem;
+  background-image: url('/src/img/Rasputin.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.search-container {
+  padding: 1.5rem;
 }
 
 .profile-search-label {
   color: azure;
   font-size: 1.5rem;
-  position: relative;
-  top: 1.25rem;
-  left: 1.25rem;
 }
 
 .profile-search-input {
-  height: 1.5rem;
+  height: 2rem;
   width: 22rem;
   margin: 0.5rem;
   background-color: #333333;
   color: azure;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
-  position: relative;
-  top: 1.75rem;
-  left: 2rem;
 }
 
 .profile-search-button {
   font-family: 'Montserrat', sans-serif;
   background-color: azure;
   border-radius: 8px;
-  position: relative;
-  top: 1.5rem;
-  left: 2rem;
   padding: 0.5rem;
+  margin: 0.5rem;
+  position: relative;
+  bottom: 0.25rem;
+}
+
+.search-results-container {
+  padding: 1.5rem;
+}
+
+.results-label {
+  margin: 0;
+  color: azure;
+}
+
+.results {
+  padding: 0;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px;
+  border-color: azure;
+  background-color: #191919;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 10px;
+  padding-left: 1rem;
+  width: 25rem;
+}
+
+.search-result-platform-img {
+  height: 2rem;
+  padding: 0.5rem;
+  margin: auto 0;
+}
+
+.profile-name {
+  color: azure;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  justify-items: flex-end;
+  width: 26rem;
+}
+
+.btn--inline {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #333333;
+  color: azure;
+  width: 6rem;
+  height: 3rem;
 }

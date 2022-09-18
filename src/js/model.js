@@ -8,6 +8,8 @@ export const state = {
       bungieNameCode: 0,
     },
     results: [],
+    resultsPerPage: 5,
+    page: 1,
   },
 };
 
@@ -29,9 +31,19 @@ export const searchPlayer = async function (query) {
     }).then(data => {
       // Save search results
       state.search.results = data.Response.searchResults;
-      console.log(state.search);
     });
+    // Reset page for new search
+    state.search.page = 1;
+    console.log(state.search);
   } catch (err) {
     console.error(`${err} Unable to get search results 💥`);
   }
+};
+
+export const getSearchResultsPage = function (page = state.search.page) {
+  state.search.page = page;
+  const start = (page - 1) * state.search.resultsPerPage; // 0;
+  const end = page * state.search.resultsPerPage; // 9;
+
+  return state.search.results.slice(start, end);
 };
