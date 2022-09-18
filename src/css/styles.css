@@ -91,7 +91,7 @@ h1 {
   line-height: 1;
   margin-top: 10px;
   padding-left: 1rem;
-  width: 27rem;
+  width: 25rem;
 }
 
 .search-result-platform-img {
@@ -102,4 +102,19 @@ h1 {
 
 .profile-name {
   color: azure;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  justify-items: flex-end;
+  width: 26rem;
+}
+
+.btn--inline {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #333333;
+  color: azure;
+  width: 6rem;
+  height: 3rem;
 }
