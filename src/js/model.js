@@ -31,8 +31,10 @@ export const searchPlayer = async function (query) {
     }).then(data => {
       // Save search results
       state.search.results = data.Response.searchResults;
-      console.log(state.search);
     });
+    // Reset page for new search
+    state.search.page = 1;
+    console.log(state.search);
   } catch (err) {
     console.error(`${err} Unable to get search results 💥`);
   }
