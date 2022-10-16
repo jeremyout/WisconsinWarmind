@@ -103,6 +103,10 @@ h1 {
   width: 25rem;
 }
 
+.search-result:hover {
+  cursor: pointer;
+}
+
 .search-result-no-platform {
   display: flex;
   justify-content: space-between;
@@ -114,6 +118,10 @@ h1 {
   margin-top: 10px;
   padding-left: 1rem;
   width: 25rem;
+}
+
+.search-result-no-platform:hover {
+  cursor: not-allowed;
 }
 
 .search-result-platform-img {
