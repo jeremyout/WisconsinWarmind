@@ -103,14 +103,38 @@ h1 {
   width: 25rem;
 }
 
+.search-result-no-platform {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px;
+  border-color: rgb(155, 155, 155);
+  background-color: #5a5a5a;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 10px;
+  padding-left: 1rem;
+  width: 25rem;
+}
+
 .search-result-platform-img {
   height: 2rem;
   padding: 0.5rem;
   margin: auto 0;
 }
 
+.search-result-platform-img-no-platform {
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: auto 0;
+  color: rgb(155, 155, 155);
+}
+
 .profile-name {
   color: azure;
+}
+
+.profile-name-no-platform {
+  color: rgb(155, 155, 155);
 }
 
 .pagination {
