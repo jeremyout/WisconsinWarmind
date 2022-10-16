@@ -139,10 +139,12 @@ h1 {
 
 .profile-name {
   color: azure;
+  font-family: 'Azeret Mono', monospace;
 }
 
 .profile-name-no-platform {
   color: rgb(155, 155, 155);
+  font-family: 'Azeret Mono', monospace;
 }
 
 .pagination {
