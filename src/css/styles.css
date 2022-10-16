@@ -68,8 +68,16 @@ h1 {
   bottom: 0.25rem;
 }
 
+.results-char-select-container {
+  display: flex;
+}
+
 .search-results-container {
+  width: 50%;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .results-label {
@@ -79,6 +87,7 @@ h1 {
 
 .results {
   padding: 0;
+  height: 20.188rem;
 }
 
 .search-result {
@@ -107,7 +116,6 @@ h1 {
 .pagination {
   display: flex;
   justify-content: space-between;
-  justify-items: flex-end;
   width: 26rem;
 }
 
@@ -117,4 +125,13 @@ h1 {
   color: azure;
   width: 6rem;
   height: 3rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.hidden-btn {
+  opacity: 0;
+  pointer-events: none;
 }

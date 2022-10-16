@@ -11,7 +11,7 @@ class PreviewView extends View {
       <p class="profile-name">${this._data.bungieGlobalDisplayName}#${this._data.bungieGlobalDisplayNameCode}</p>
       <img
         src="https://www.bungie.net/${this._data.destinyMemberships[0].iconPath}"
-        alt="Steam Logo"
+        alt="Platform Logo"
         class="search-result-platform-img"
       />
   </li>

@@ -3,13 +3,16 @@ import profileSearchView from './views/profileSearchView';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 
+const resultLabel = document.querySelector('.results-label');
+
 const controlSearchResults = async function () {
   try {
     // 1) Get search query
     const query = profileSearchView.getQuery();
     if (!query) return;
 
-    // 2) Load search results
+    // 2) Load search results and show result label
+    resultLabel.classList.remove('hidden');
     await model.searchPlayer(query);
 
     // 3) Render results
@@ -23,7 +26,7 @@ const controlSearchResults = async function () {
 };
 
 const controlPagination = function (goToPage) {
-  console.log(goToPage);
+  // console.log(goToPage);
   // Render NEW results
   resultsView.render(model.getSearchResultsPage(goToPage));
   // Render NEW pagination buttons
