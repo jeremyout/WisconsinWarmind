@@ -73,7 +73,7 @@ h1 {
 }
 
 .search-results-container {
-  width: 50%;
+  width: 40%;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -91,37 +91,21 @@ h1 {
 }
 
 .search-result {
-  display: flex;
-  justify-content: space-between;
   border: solid 1px;
   border-color: azure;
   background-color: #191919;
-  font-size: 1.1rem;
-  line-height: 1;
   margin-top: 10px;
-  padding-left: 1rem;
-  width: 25rem;
-}
-
-.search-result:hover {
-  cursor: pointer;
+  width: 23rem;
+  list-style-type: none;
 }
 
 .search-result-no-platform {
-  display: flex;
-  justify-content: space-between;
   border: solid 1px;
   border-color: rgb(155, 155, 155);
   background-color: #5a5a5a;
-  font-size: 1.1rem;
-  line-height: 1;
   margin-top: 10px;
-  padding-left: 1rem;
-  width: 25rem;
-}
-
-.search-result-no-platform:hover {
-  cursor: not-allowed;
+  width: 23rem;
+  list-style-type: none;
 }
 
 .search-result-platform-img {
@@ -140,17 +124,34 @@ h1 {
 .profile-name {
   color: azure;
   font-family: 'Azeret Mono', monospace;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 22rem;
+  padding-left: 1rem;
 }
 
 .profile-name-no-platform {
   color: rgb(155, 155, 155);
   font-family: 'Azeret Mono', monospace;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 22rem;
+  padding-left: 1rem;
+  cursor: not-allowed;
 }
 
 .pagination {
   display: flex;
   justify-content: space-between;
-  width: 26rem;
+  width: 23rem;
 }
 
 .btn--inline {
