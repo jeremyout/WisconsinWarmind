@@ -2,8 +2,13 @@ import * as model from './model.js';
 import profileSearchView from './views/profileSearchView';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
+import characterSelectView from './views/characterSelectView.js';
 
 const resultLabel = document.querySelector('.results-label');
+
+const controlCharacterSelect = async function () {
+  characterSelectView.render(model.state.search);
+};
 
 const controlSearchResults = async function () {
   try {
@@ -36,5 +41,6 @@ const controlPagination = function (goToPage) {
 const init = function () {
   profileSearchView.addProfileSearchHandler(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  characterSelectView.addHandlerRender(controlCharacterSelect);
 };
 init();
