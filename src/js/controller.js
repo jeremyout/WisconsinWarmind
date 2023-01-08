@@ -10,7 +10,9 @@ const profileSeachResultLabel = document.querySelector(
 
 const controlCharacterSelect = async function () {
   // Store the selected profile
-  model.storeSelectedProfile(model.state.search.results);
+  model.storeSelectedSearchResult(model.state.search.results);
+  // Fetch and store the profile from the Destiny2.GetProfile endpoint
+  await model.storeProfile();
 
   characterSelectView.render(model.state.search);
 };
