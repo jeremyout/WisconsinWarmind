@@ -11,6 +11,7 @@ export const state = {
     resultsPerPage: 5,
     page: 1,
   },
+  selectedProfile: [],
 };
 
 export const searchPlayer = async function (query) {
@@ -38,6 +39,16 @@ export const searchPlayer = async function (query) {
   } catch (err) {
     console.error(`${err} Unable to get search results 💥`);
   }
+};
+
+export const storeSelectedProfile = function (id) {
+  state.search.results.forEach(result => {
+    if (result.id === window.location.hash.slice(1)) {
+      state.selectedProfile = result;
+      console.log('Selected Profile Stored');
+      console.log(state.selectedProfile);
+    }
+  });
 };
 
 export const getSearchResultsPage = function (page = state.search.page) {

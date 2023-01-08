@@ -9,6 +9,9 @@ const profileSeachResultLabel = document.querySelector(
 );
 
 const controlCharacterSelect = async function () {
+  // Store the selected profile
+  model.storeSelectedProfile(model.state.search.results);
+
   characterSelectView.render(model.state.search);
 };
 
