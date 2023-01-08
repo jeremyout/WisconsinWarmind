@@ -39,7 +39,7 @@ h1 {
   margin: 0 auto;
 }
 
-.search-container {
+.profile-search-container {
   padding: 1.5rem;
 }
 
@@ -68,11 +68,11 @@ h1 {
   bottom: 0.25rem;
 }
 
-.results-char-select-container {
+.profile-search-results-char-select-container {
   display: flex;
 }
 
-.search-results-container {
+.profile-search-results-container {
   width: 40%;
   padding: 1.5rem;
   display: flex;
@@ -80,17 +80,17 @@ h1 {
   justify-content: space-between;
 }
 
-.results-label {
+.profile-search-results-label {
   margin: 0;
   color: azure;
 }
 
-.results {
+.profile-search-results {
   padding: 0;
   height: 20.188rem;
 }
 
-.search-result {
+.profile-search-result {
   border: solid 1px;
   border-color: azure;
   background-color: #191919;
@@ -99,7 +99,7 @@ h1 {
   list-style-type: none;
 }
 
-.search-result-no-platform {
+.profile-search-result-no-platform {
   border: solid 1px;
   border-color: rgb(155, 155, 155);
   background-color: #5a5a5a;
@@ -108,13 +108,13 @@ h1 {
   list-style-type: none;
 }
 
-.search-result-platform-img {
+.profile-search-result-platform-img {
   height: 2rem;
   padding: 0.5rem;
   margin: auto 0;
 }
 
-.search-result-platform-img-no-platform {
+.profile-search-result-platform-img-no-platform {
   font-size: 2rem;
   padding: 0.5rem;
   margin: auto 0;
