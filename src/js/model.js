@@ -1,5 +1,6 @@
 import { getJSON, postData } from './helpers';
 import { BUNGIE_API_ROOT_PATH } from './config.js';
+import { ClassByString } from './helpers';
 
 export const state = {
   search: {
@@ -62,6 +63,57 @@ export const storeProfile = async function () {
     console.log(state.fetchedProfile);
   } catch (err) {
     console.error(`${err} Unable to get profile characters 💥💥`);
+  }
+};
+
+export const getAllCharacters = async function () {
+  try {
+    console.log(state.fetchedProfile);
+    const characters = state.fetchedProfile.characterIds;
+    console.log(characters);
+
+    const data = await Promise.all([
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+      ),
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[1]}/?components=200`
+      ),
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[2]}/?components=200`
+      ),
+    ]);
+    const characterData = data.map(
+      charData => charData.Response.character.data
+    );
+    state.characters = characterData;
+    console.log(state.characters);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getTitan = function () {
+  for (const character of state.characters) {
+    if (character.classType === ClassByString.Titan) {
+      return character;
+    }
+  }
+};
+
+export const getWarlock = function () {
+  for (const character of state.characters) {
+    if (character.classType === ClassByString.Warlock) {
+      return character;
+    }
+  }
+};
+
+export const getHunter = function () {
+  for (const character of state.characters) {
+    if (character.classType === ClassByString.Hunter) {
+      return character;
+    }
   }
 };
 

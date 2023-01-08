@@ -186,9 +186,9 @@ h1 {
 }
 
 .character {
-  width: 30rem;
-  height: 6rem;
-  background-color: #191919;
+  width: 474px;
+  height: 96px;
+  /* background-color: #191919; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,9 +200,42 @@ h1 {
 .char-class {
   color: azure;
   padding: 1rem;
+  position: relative;
+  bottom: 1.5rem;
+  left: 5rem;
 }
 
 .power-level {
   color: rgb(252, 219, 55);
   padding: 1rem;
+  position: relative;
+  bottom: 1.5rem;
+}
+
+.character-block {
+  list-style-type: none;
+}
+
+.character-block-0 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/2afb48b7c0f148e5fa34491e075e395a.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.character-block-1 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/a85db50469017eb59532c0d6336f6cb9.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.character-block-2 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/f236a3978cefc50ea44741207ddcfa0f.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
 }

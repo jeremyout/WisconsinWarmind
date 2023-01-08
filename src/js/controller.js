@@ -8,13 +8,38 @@ const profileSeachResultLabel = document.querySelector(
   '.profile-search-results-label'
 );
 
+const setEmblemBackgrounds = function () {
+  const titan = model.getTitan();
+  console.log(titan);
+  const hunter = model.getHunter();
+  const warlock = model.getWarlock();
+  if (titan) {
+    document.querySelector(
+      '.character-block-0'
+    ).style.backgroundImage = `url(https://www.bungie.net/${titan.emblemBackgroundPath})`;
+  }
+  if (hunter) {
+    document.querySelector(
+      '.character-block-1'
+    ).style.backgroundImage = `url(https://www.bungie.net/${hunter.emblemBackgroundPath})`;
+  }
+  if (warlock) {
+    document.querySelector(
+      '.character-block-2'
+    ).style.backgroundImage = `url(https://www.bungie.net/${warlock.emblemBackgroundPath})`;
+  }
+};
+
 const controlCharacterSelect = async function () {
   // Store the selected profile
   model.storeSelectedSearchResult(model.state.search.results);
   // Fetch and store the profile from the Destiny2.GetProfile endpoint
   await model.storeProfile();
+  // Fetch characters
+  await model.getAllCharacters();
 
-  characterSelectView.render(model.state.search);
+  characterSelectView.render(model.state.characters);
+  setEmblemBackgrounds();
 };
 
 const controlSearchResults = async function () {

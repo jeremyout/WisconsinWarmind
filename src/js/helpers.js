@@ -14,7 +14,12 @@ export const MembershipType = {
 };
 
 // https://bungie-net.github.io/multi/schema_Destiny-DestinyClass.html#schema_Destiny-DestinyClass
-export const Classes = {
+export const ClassById = {
+  0: 'Titan',
+  1: 'Hunter',
+  2: 'Warlock',
+};
+export const ClassByString = {
   Titan: 0,
   Hunter: 1,
   Warlock: 2,
