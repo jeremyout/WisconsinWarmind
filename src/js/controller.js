@@ -39,6 +39,7 @@ const controlPagination = function (goToPage) {
   profileSearchResultsView.render(model.getSearchResultsPage(goToPage));
   // Render NEW pagination buttons
   paginationView.render(model.state.search);
+  characterSelectView.addHandlerClick(controlCharacterSelect);
 };
 
 const init = function () {

@@ -1,11 +1,19 @@
 import View from './View.js';
-import resultsView from './resultsView.js';
 
 class CharacterSelectView extends View {
   _parentElement = document.querySelector('.character-select');
 
-  addHandlerRender(handler) {
-    // handler();
+  addHandlerClick(handler) {
+    for (const node of document.querySelectorAll('.profile-search-result')) {
+      node.addEventListener('click', function (e) {
+        console.log('event fired');
+        console.log(node);
+        e.preventDefault();
+        console.log(node.children[0]);
+        window.location.hash = node.children[0].getAttribute('href');
+        handler();
+      });
+    }
   }
 
   _generateMarkup() {
