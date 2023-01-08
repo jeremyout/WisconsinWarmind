@@ -12,6 +12,10 @@ h1 {
   color: white;
 }
 
+.header_logo {
+  text-decoration: none;
+}
+
 .main-header {
   margin: 0 auto;
   align-items: center;
