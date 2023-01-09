@@ -61,14 +61,15 @@ class CharacterSelectView extends View {
           </a>
       </li>
     `;
-    } else if (this._data.length === 1) {
+    } else {
+      console.log(this._data);
       return `
-      <li class="character-block-${this._data[0].classType}" data-class-type="${
-        this._data[0].classType
+      <li class="character-block-${this._data.classType}" data-class-type="${
+        this._data.classType
       }">
           <a href="" class="character">
-            <p class="char-class">${ClassById[this._data[0].classType]}</p>
-            <p class="power-level">${this._data[0].light}</p>
+            <p class="char-class">${ClassById[this._data.classType]}</p>
+            <p class="power-level">${this._data.light}</p>
           </a>
       </li>
     `;

@@ -10,9 +10,9 @@ const profileSeachResultLabel = document.querySelector(
 
 const setEmblemBackgrounds = function () {
   const titan = model.getTitan();
-  console.log(titan);
   const hunter = model.getHunter();
   const warlock = model.getWarlock();
+
   if (titan) {
     document.querySelector(
       '.character-block-0'
