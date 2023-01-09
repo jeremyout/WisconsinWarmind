@@ -12,6 +12,10 @@ h1 {
   color: white;
 }
 
+.header_logo {
+  text-decoration: none;
+}
+
 .main-header {
   margin: 0 auto;
   align-items: center;
@@ -39,7 +43,7 @@ h1 {
   margin: 0 auto;
 }
 
-.search-container {
+.profile-search-container {
   padding: 1.5rem;
 }
 
@@ -68,47 +72,90 @@ h1 {
   bottom: 0.25rem;
 }
 
-.search-results-container {
-  padding: 1.5rem;
+.profile-search-results-char-select-container {
+  display: flex;
 }
 
-.results-label {
+.profile-search-results-container {
+  width: 40%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-search-results-label {
   margin: 0;
   color: azure;
 }
 
-.results {
+.profile-search-results {
   padding: 0;
+  height: 20.188rem;
 }
 
-.search-result {
-  display: flex;
-  justify-content: space-between;
+.profile-search-result {
   border: solid 1px;
   border-color: azure;
   background-color: #191919;
-  font-size: 1.1rem;
-  line-height: 1;
   margin-top: 10px;
-  padding-left: 1rem;
-  width: 25rem;
+  width: 23rem;
+  list-style-type: none;
 }
 
-.search-result-platform-img {
+.profile-search-result-no-platform {
+  border: solid 1px;
+  border-color: rgb(155, 155, 155);
+  background-color: #5a5a5a;
+  margin-top: 10px;
+  width: 23rem;
+  list-style-type: none;
+}
+
+.profile-search-result-platform-img {
   height: 2rem;
   padding: 0.5rem;
   margin: auto 0;
 }
 
+.profile-search-result-platform-img-no-platform {
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: auto 0;
+  color: rgb(155, 155, 155);
+}
+
 .profile-name {
   color: azure;
+  font-family: 'Azeret Mono', monospace;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 22rem;
+  padding-left: 1rem;
+}
+
+.profile-name-no-platform {
+  color: rgb(155, 155, 155);
+  font-family: 'Azeret Mono', monospace;
+  text-decoration: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 22rem;
+  padding-left: 1rem;
+  cursor: not-allowed;
 }
 
 .pagination {
   display: flex;
   justify-content: space-between;
-  justify-items: flex-end;
-  width: 26rem;
+  width: 23rem;
 }
 
 .btn--inline {
@@ -117,4 +164,78 @@ h1 {
   color: azure;
   width: 6rem;
   height: 3rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.hidden-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.character-select {
+  width: 60%;
+  padding: 1.5rem;
+}
+
+.char-selection-label {
+  margin: 0;
+  color: azure;
+}
+
+.character {
+  width: 474px;
+  height: 96px;
+  /* background-color: #191919; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-decoration: none;
+}
+
+.char-class {
+  color: azure;
+  padding: 1rem;
+  position: relative;
+  bottom: 1.5rem;
+  left: 5rem;
+}
+
+.power-level {
+  color: rgb(252, 219, 55);
+  padding: 1rem;
+  position: relative;
+  bottom: 1.5rem;
+}
+
+.character-block {
+  list-style-type: none;
+}
+
+.character-block-0 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/2afb48b7c0f148e5fa34491e075e395a.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.character-block-1 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/a85db50469017eb59532c0d6336f6cb9.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.character-block-2 {
+  list-style-type: none;
+  /* background-image: url(https://www.bungie.net/common/destiny2_content/icons/f236a3978cefc50ea44741207ddcfa0f.jpg); */
+  background-position: 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
 }

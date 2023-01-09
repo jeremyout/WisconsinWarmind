@@ -1,5 +1,6 @@
 import { getJSON, postData } from './helpers';
 import { BUNGIE_API_ROOT_PATH } from './config.js';
+import { ClassByString } from './helpers';
 
 export const state = {
   search: {
@@ -11,6 +12,9 @@ export const state = {
     resultsPerPage: 5,
     page: 1,
   },
+  searchProfileSelected: [],
+  fetchedProfile: [],
+  characters: [],
 };
 
 export const searchPlayer = async function (query) {
@@ -37,6 +41,126 @@ export const searchPlayer = async function (query) {
     console.log(state.search);
   } catch (err) {
     console.error(`${err} Unable to get search results 💥`);
+  }
+};
+
+export const storeSelectedSearchResult = function (id) {
+  state.search.results.forEach(result => {
+    if (result.id === window.location.hash.slice(1)) {
+      state.searchProfileSelected = result;
+      console.log('Selected Search Profile Stored');
+      console.log(state.searchProfileSelected);
+    }
+  });
+};
+
+export const storeProfile = async function () {
+  try {
+    const profile = await getJSON(
+      `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/?components=100`
+    );
+    state.fetchedProfile = profile.Response.profile.data;
+    console.log(state.fetchedProfile);
+  } catch (err) {
+    console.error(`${err} Unable to get profile characters 💥💥`);
+  }
+};
+
+const getCharactersFromEndpoint = async function (characters) {
+  let data;
+  if (characters.length === 3) {
+    data = await Promise.all([
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+      ),
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[1]}/?components=200`
+      ),
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[2]}/?components=200`
+      ),
+    ]);
+  } else if (characters.length === 2) {
+    data = await Promise.all([
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+      ),
+      getJSON(
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[1]}/?components=200`
+      ),
+    ]);
+  } else if (characters.length === 1) {
+    data = await getJSON(
+      `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+    );
+  }
+  return data;
+};
+
+export const getAllCharacters = async function () {
+  try {
+    const characters = state.fetchedProfile.characterIds;
+
+    const data = await getCharactersFromEndpoint(characters);
+
+    if (characters.length === 0) {
+      alert('You have no characters, RIP BOZO');
+      throw new Error('No characters, come back later!');
+    }
+
+    if (characters.length === 1) {
+      state.characters = data.Response.character.data;
+    } else {
+      state.characters = data.map(charData => charData.Response.character.data);
+    }
+    console.log(state.characters);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getTitan = function () {
+  // If only one character, check the single character
+  if (!state.characters.length) {
+    if (state.characters.classType === ClassByString.Titan) {
+      return state.characters;
+    }
+  } else {
+    for (const character of state.characters) {
+      if (character.classType === ClassByString.Titan) {
+        return character;
+      }
+    }
+  }
+};
+
+export const getWarlock = function () {
+  // If only one character, check the single character
+  if (!state.characters.length) {
+    if (state.characters.classType === ClassByString.Warlock) {
+      return state.characters;
+    }
+  } else {
+    for (const character of state.characters) {
+      if (character.classType === ClassByString.Warlock) {
+        return character;
+      }
+    }
+  }
+};
+
+export const getHunter = function () {
+  // If only one character, check the single character
+  if (!state.characters.length) {
+    if (state.characters.classType === ClassByString.Hunter) {
+      return state.characters;
+    }
+  } else {
+    for (const character of state.characters) {
+      if (character.classType === ClassByString.Hunter) {
+        return character;
+      }
+    }
   }
 };
 

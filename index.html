@@ -15,20 +15,30 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Noto+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/d54125ec49.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="main-header">
-      <div class="header_logo">
-        <img
-          class="logo_img"
-          src="src/img/WisconsinWarmind-round.png"
-          alt="WisconsinWarmind_logo"
-        />
-        <h1>Wisconsin Warmind</h1>
+      <div>
+        <a href="" class="header_logo">
+          <img
+            class="logo_img"
+            src="src/img/WisconsinWarmind-round.png"
+            alt="WisconsinWarmind_logo"
+          />
+          <h1>Wisconsin Warmind</h1>
+        </a>
       </div>
     </div>
     <div class="hero-container">
-      <div class="search-container">
+      <div class="profile-search-container">
         <form class="profile-search-form">
           <label class="profile-search-label" for="profile-search"
             >Search for a Bungie profile:</label
@@ -43,10 +53,11 @@
           <button class="profile-search-button" type="submit">Search</button>
         </form>
       </div>
-      <div class="search-results-container">
-        <h2 class="results-label">Results:</h2>
-        <ul class="results">
-          <!-- <li class="search-result">
+      <div class="profile-search-results-char-select-container">
+        <div class="profile-search-results-container">
+          <h2 class="profile-search-results-label hidden">Results:</h2>
+          <ul class="profile-search-results">
+            <!-- <li class="search-result">
             <p class="profile-name">test#1234</p>
             <img
               src="https://www.bungie.net/img/theme/bungienet/icons/steamLogo.png"
@@ -86,9 +97,30 @@
               class="search-result-platform-img"
             />
           </li> -->
-        </ul>
-        <div class="pagination"></div>
+          </ul>
+          <div class="pagination"></div>
+        </div>
+        <div class="character-select-container">
+          <h2 class="character-select-label hidden">Pick a Character:</h2>
+          <ul class="character-list">
+            <!-- <div class="character">
+            <p class="char-class">Warlock</p>
+            <p class="power-level">1560</p>
+            </div>
+            <div class="character">
+              <p class="char-class">Hunter</p>
+              <p class="power-level">1560</p>
+            </div>
+            <div class="character">
+              <p class="char-class">Titan</p>
+              <p class="power-level">1560</p>
+            </div> -->
+          </ul>
+        </div>
       </div>
+    </div>
+    <div class="next">
+      <a href="src/html/character.html">Character Page</a>
     </div>
   </body>
 </html>
