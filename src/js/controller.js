@@ -31,6 +31,8 @@ const setEmblemBackgrounds = function () {
 };
 
 const controlCharacterSelect = async function () {
+  // Empty the character select view
+  characterSelectView._clear();
   // Store the selected profile
   model.storeSelectedSearchResult(model.state.search.results);
   // Fetch and store the profile from the Destiny2.GetProfile endpoint
@@ -44,6 +46,7 @@ const controlCharacterSelect = async function () {
 
 const controlSearchResults = async function () {
   try {
+    characterSelectView._clear();
     // 1) Get search query
     const query = profileSearchView.getQuery();
     if (!query) return;
