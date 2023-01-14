@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/jeremyoutinen/WisconsinWarmind#readme",
   "devDependencies": {
-    "parcel": "^2.7.0"
+    "parcel": "^2.8.2"
   }
 }
