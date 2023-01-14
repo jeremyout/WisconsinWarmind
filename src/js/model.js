@@ -114,6 +114,13 @@ export const getAllCharacters = async function () {
       state.characters = data.map(charData => charData.Response.character.data);
     }
     console.log(state.characters);
+    state.characters.sort((char1, char2) => {
+      // console.log(char1.dateLastPlayed);
+      return (
+        Date.parse(char2.dateLastPlayed) - Date.parse(char1.dateLastPlayed)
+      );
+    });
+    console.log(state.characters);
   } catch (err) {
     console.error(err);
   }
