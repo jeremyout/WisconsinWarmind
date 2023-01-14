@@ -68,30 +68,34 @@ export const storeProfile = async function () {
 
 const getCharactersFromEndpoint = async function (characters) {
   let data;
+  let membershipType =
+    state.searchProfileSelected.destinyMemberships[0].membershipType;
+  let membershipId =
+    state.searchProfileSelected.destinyMemberships[0].membershipId;
   if (characters.length === 3) {
     data = await Promise.all([
       getJSON(
-        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[0]}/?components=200`
       ),
       getJSON(
-        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[1]}/?components=200`
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[1]}/?components=200`
       ),
       getJSON(
-        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[2]}/?components=200`
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[2]}/?components=200`
       ),
     ]);
   } else if (characters.length === 2) {
     data = await Promise.all([
       getJSON(
-        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[0]}/?components=200`
       ),
       getJSON(
-        `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[1]}/?components=200`
+        `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[1]}/?components=200`
       ),
     ]);
   } else if (characters.length === 1) {
     data = await getJSON(
-      `${BUNGIE_API_ROOT_PATH}/Destiny2/${state.searchProfileSelected.destinyMemberships[0].membershipType}/Profile/${state.searchProfileSelected.destinyMemberships[0].membershipId}/Character/${characters[0]}/?components=200`
+      `${BUNGIE_API_ROOT_PATH}/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characters[0]}/?components=200`
     );
   }
   return data;
