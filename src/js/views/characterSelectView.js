@@ -20,7 +20,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data[0].classType}" data-class-type="${
         this._data[0].classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[0].characterId}" class="character">
             <p class="char-class">${ClassById[this._data[0].classType]}</p>
             <p class="power-level">${this._data[0].light}</p>
           </a>
@@ -28,7 +28,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data[1].classType}" data-class-type="${
         this._data[1].classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[1].characterId}" class="character">
           <p class="char-class">${ClassById[this._data[1].classType]}</p>
           <p class="power-level">${this._data[1].light}</p>
           </a>
@@ -36,7 +36,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data[2].classType}" data-class-type="${
         this._data[2].classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[2].characterId}" class="character">
           <p class="char-class">${ClassById[this._data[2].classType]}</p>
           <p class="power-level">${this._data[2].light}</p>
           </a>
@@ -47,7 +47,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data[0].classType}" data-class-type="${
         this._data[0].classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[0].characterId}" class="character">
             <p class="char-class">${ClassById[this._data[0].classType]}</p>
             <p class="power-level">${this._data[0].light}</p>
           </a>
@@ -55,7 +55,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data[1].classType}" data-class-type="${
         this._data[1].classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[1].characterId}" class="character">
           <p class="char-class">${ClassById[this._data[1].classType]}</p>
           <p class="power-level">${this._data[1].light}</p>
           </a>
@@ -67,7 +67,7 @@ class CharacterSelectView extends View {
       <li class="character-block-${this._data.classType}" data-class-type="${
         this._data.classType
       }">
-          <a href="" class="character">
+          <a href="#${this._data[0].characterId}" class="character">
             <p class="char-class">${ClassById[this._data.classType]}</p>
             <p class="power-level">${this._data.light}</p>
           </a>
