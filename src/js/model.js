@@ -30,7 +30,7 @@ export const searchPlayer = async function (query) {
       state.search.query.bungieNameCode = 0;
     }
 
-    await postData(`${BUNGIE_API_ROOT_PATH}/User/Search/GlobalName/0/ `, {
+    await postData(`${BUNGIE_API_ROOT_PATH}/User/Search/GlobalName/0/`, {
       displayNamePrefix: state.search.query.bungieName,
     }).then(data => {
       // Save search results
@@ -113,6 +113,12 @@ export const getAllCharacters = async function () {
     } else {
       state.characters = data.map(charData => charData.Response.character.data);
     }
+    // Sort characters
+    state.characters.sort((char1, char2) => {
+      let da = new Date(char1.dateLastPlayed);
+      let db = new Date(char2.dateLastPlayed);
+      return db - da;
+    });
     console.log(state.characters);
   } catch (err) {
     console.error(err);
